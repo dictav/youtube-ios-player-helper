@@ -127,7 +127,7 @@ NSString static *const kYTPlayerEmbedUrlRegexPattern = @"^http(s)://(www.)youtub
   NSNumber *startSecondsValue = [NSNumber numberWithFloat:startSeconds];
   NSNumber *endSecondsValue = [NSNumber numberWithFloat:endSeconds];
   NSString *qualityValue = [YTPlayerView stringForPlaybackQuality:suggestedQuality];
-  NSString *command = [NSString stringWithFormat:@"player.cueVideoById('%@', %@, %@, '%@');",
+  NSString *command = [NSString stringWithFormat:@"player.cueVideoById({'videoId': '%@', 'startSeconds': %@, 'endSeconds': %@, 'suggestedQuality': '%@'});",
       videoId, startSecondsValue, endSecondsValue, qualityValue];
   [self stringFromEvaluatingJavaScript:command];
 }
@@ -149,7 +149,7 @@ NSString static *const kYTPlayerEmbedUrlRegexPattern = @"^http(s)://(www.)youtub
   NSNumber *startSecondsValue = [NSNumber numberWithFloat:startSeconds];
   NSNumber *endSecondsValue = [NSNumber numberWithFloat:endSeconds];
   NSString *qualityValue = [YTPlayerView stringForPlaybackQuality:suggestedQuality];
-  NSString *command = [NSString stringWithFormat:@"player.loadVideoById('%@', %@, %@, '%@');",
+  NSString *command = [NSString stringWithFormat:@"player.loadVideoById({'videoId': '%@', 'startSeconds': %@, 'endSeconds': %@, 'suggestedQuality': '%@'});",
       videoId, startSecondsValue, endSecondsValue, qualityValue];
   [self stringFromEvaluatingJavaScript:command];
 }
@@ -171,7 +171,7 @@ NSString static *const kYTPlayerEmbedUrlRegexPattern = @"^http(s)://(www.)youtub
   NSNumber *startSecondsValue = [NSNumber numberWithFloat:startSeconds];
   NSNumber *endSecondsValue = [NSNumber numberWithFloat:endSeconds];
   NSString *qualityValue = [YTPlayerView stringForPlaybackQuality:suggestedQuality];
-  NSString *command = [NSString stringWithFormat:@"player.cueVideoByUrl('%@', %@, %@, '%@');",
+  NSString *command = [NSString stringWithFormat:@"player.cueVideoByUrl({'mediaContentUrl': '%@', 'startSeconds': %@, 'endSeconds': %@, 'suggestedQuality': '%@'});",
       videoURL, startSecondsValue, endSecondsValue, qualityValue];
   [self stringFromEvaluatingJavaScript:command];
 }
@@ -193,7 +193,7 @@ NSString static *const kYTPlayerEmbedUrlRegexPattern = @"^http(s)://(www.)youtub
   NSNumber *startSecondsValue = [NSNumber numberWithFloat:startSeconds];
   NSNumber *endSecondsValue = [NSNumber numberWithFloat:endSeconds];
   NSString *qualityValue = [YTPlayerView stringForPlaybackQuality:suggestedQuality];
-  NSString *command = [NSString stringWithFormat:@"player.loadVideoByUrl('%@', %@, %@, '%@');",
+  NSString *command = [NSString stringWithFormat:@"player.loadVideoByUrl({'mediaContentUrl': '%@', 'startSeconds': %@, 'endSeconds': %@, 'suggestedQuality': '%@'});",
       videoURL, startSecondsValue, endSecondsValue, qualityValue];
   [self stringFromEvaluatingJavaScript:command];
 }
